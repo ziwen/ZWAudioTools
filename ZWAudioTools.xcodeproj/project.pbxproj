@@ -519,6 +519,7 @@
 				71F8A7321ECAE428002222B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71F8A7331ECAE428002222B9 /* Build configuration list for PBXNativeTarget "ZWAudioToolsTests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +528,7 @@
 				71F8A7351ECAE428002222B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		71F8A7361ECAE428002222B9 /* Build configuration list for PBXNativeTarget "ZWAudioToolsUITests" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +537,7 @@
 				71F8A7381ECAE428002222B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
