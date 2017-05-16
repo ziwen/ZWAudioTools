@@ -331,7 +331,8 @@ NSString *const ZWSpeakLoudly       = @"com.baidu.bim.speakLoudly";
                                                  name:AVAudioSessionRouteChangeNotification
                                                object:nil];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sessionInterruption:)
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(sessionInterruption:)
                                                  name:AVAudioSessionInterruptionNotification
                                                object:[AVAudioSession sharedInstance]];
 
