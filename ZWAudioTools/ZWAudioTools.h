@@ -43,7 +43,7 @@ typedef struct ZWRecordInfo_t
 /**
  *	@brief	用户是否开启录音权限
  *
- *	@return	是否开启录音，yes:开启，no:禁用，仅适用与iOS7及以后
+ *	@return	是否开启录音，yes:开启，no:禁用，仅适用与iOS7及以后,iOS 7之前默认开启
  */
 + (BOOL)canRecord;
 
@@ -84,7 +84,7 @@ typedef void(^EndStop)(const char *);
  *	@brief	播放语音消息
  *
  *	@param 	filePath 	语音路径
- *  @return 录制成功还是失败
+ *  @return 播放成功还是失败
  */
 
 - (BOOL)play:(const char *)filePath;
@@ -93,7 +93,9 @@ typedef void(^EndStop)(const char *);
  *	@brief	停止播放语音消息
  */
 - (void)stop;
-
+/**
+ *	@brief	注册近距离传感器，耳机检测
+ */
 - (void)registPlayer;
 
 @end
@@ -101,7 +103,7 @@ typedef void(^EndStop)(const char *);
 
 
 /**
- *  开启一次语音的通知
+ *  开启一次语音录制的通知
  */
 extern NSString *const ZWAudioStartRecord;
 /**

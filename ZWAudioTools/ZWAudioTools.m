@@ -302,7 +302,6 @@ NSString *const ZWSpeakLoudly       = @"com.baidu.bim.speakLoudly";
             [self.player stop];
         }
         self.player = nil;
-       // self.currentMessage.readStatus = BIMFileMessageReadStatus_Normal;
         [[AVAudioSession sharedInstance] setActive:NO error:nil];
         if (_endStop) {
             _endStop(self.filePathString.UTF8String);
@@ -320,17 +319,17 @@ NSString *const ZWSpeakLoudly       = @"com.baidu.bim.speakLoudly";
 }
 
 - (void)registPlayer{
-    //注册光感通知
+    //注册使用近距离传感器,红外感应
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(sensorStateChange:)
                                                  name:UIDeviceProximityStateDidChangeNotification
                                                object:nil];
-
+    //监听输出设备变化（耳机插拔，蓝牙设备连接和断开等）
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(sessionRouteChange:)
                                                  name:AVAudioSessionRouteChangeNotification
                                                object:nil];
-
+   //电话打断
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(sessionInterruption:)
                                                  name:AVAudioSessionInterruptionNotification
@@ -434,7 +433,7 @@ NSString *const ZWSpeakLoudly       = @"com.baidu.bim.speakLoudly";
 - (void)sensorStateChange:(NSNotification *)notification {
     if ([self isNotUseBuiltInPort])
     {
-      //  BIMLogInfo(@"有耳机");
+      //  NSLog(@"有耳机");
         return;//带上耳机不需要这个
     }
 
